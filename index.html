@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+  <head>
+    <meta charset="utf-8">
+   
+    <title>Weather website for Guindy times</title>
+   
+    
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="heads"><h1> Weather </h1>
+        <button class="btn" onclick="change()"  id="themebtn"><i class="fa fa-adjust" aria-hidden="true"></i></button></div>
+    
+    <script>
+        var click = 0;
+        function change() {
+        click++;
+        var e = document.getElementById('themebtn');
+        if (click % 2 == 0) {
+            toggleTheme('style.css');
+            e.title = 'Dark Theme !';
+        } else {
+            toggleTheme('dark.css');
+            e.title = 'Light Theme !';
+        }
+    }
+    
+    function toggleTheme(value) {
+        var sheets = document.getElementsByTagName('link');
+        sheets[1].href = value;
+    }</script>
+        
+    
+    <link rel="icon" type="image/x-icon" href="cloudy.png" >    
+    
+ 
+    <div class="container">
+      <div class="weather-input">
+        <h3>Enter a City Name</h3>
+        <input class="city-input" type="text" placeholder="E.g., chennai , Bangalore etc">
+        <button class="search-btn">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn">Use Current Location</button>
+       
+        
+      </div>
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <h2> </h2>
+            <h6>Temperature:  °C</h6>
+            <h6>Wind:   M/S</h6>
+            <h6>Humidity:   %</h6>
+          </div>
+        </div>
+        <div class="days-forecast">
+          <h2>Forecast for the next five days</h2>
+          <ul class="weather-cards">
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
